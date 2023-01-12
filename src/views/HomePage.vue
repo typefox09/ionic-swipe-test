@@ -15,14 +15,32 @@
 
       <div id="container">
         <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-button @click="() => router.push('/view-2')">Page 2</ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+<script>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { useRouter } from 'vue-router';
+
+export default {
+    name: 'HomeVue',
+    components: {
+        IonPage,
+        IonContent,
+        IonToolbar,
+        IonTitle,
+        IonHeader,
+        IonButton
+    },
+    setup() {
+      return {
+        router: useRouter(),
+      }
+}
+}
 </script>
 
 <style scoped>
